@@ -12,21 +12,20 @@ import aggregator.view.View;
 public class Aggregator {
 
     public static void main(String[] args) {
-//        SwingView app = new SwingView();
-//        app.setVisible(true);
-
         View view = new HtmlView();
+        View swingView = new SwingView();
         Model model = new Model(view, new Provider(new HHStrategy()), new Provider(new MoikrugStrategy()));
+        model.setSwingVew(swingView);
         Controller controller = new Controller(model);
         view.setController(controller);
         ((HtmlView)view).userCitySelectEmulationMethod();
-
+//        ((SwingView)view).userCitySelectEmulationMethod();
     }
 }
 
 // Планы
 //1. добавить еще 100500 других сайтов для агрегирования вакансий.
-//Нужно всего лишь создать стратегию, а потом добавить в модель провайдер с этой стратегией.
+//      Нужно всего лишь создать стратегию, а потом добавить в модель провайдер с этой стратегией.
 //2. отсортировать все вакансии, например, по дате создания (придется распарсить дату в полученном html).
 //3. создать свою вью, например, на свинге. Подменить в main HtmlView на SwingView.
 //4. собрать приложение в war-ник, развернуть Томкат, задеплоить приложение туда. Сделать, чтоб запрос приходил с браузера.

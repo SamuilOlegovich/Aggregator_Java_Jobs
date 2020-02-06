@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Model {
     private View view;
+    private View swingVew;
     private Provider[] providers;
 
     public Model(View view, Provider... providers) {
@@ -25,6 +26,11 @@ public class Model {
             List<Vacancy> vacancyList = new ArrayList<Vacancy>();
             for (Provider provider : providers)
                 vacancyList.addAll(provider.getJavaVacancies(city));
+            swingVew.update(vacancyList);
             view.update(vacancyList);
         }
+
+    public void setSwingVew(View swingVew) {
+        this.swingVew = swingVew;
+    }
 }

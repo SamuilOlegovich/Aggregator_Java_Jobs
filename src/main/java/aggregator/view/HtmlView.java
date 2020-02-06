@@ -17,7 +17,8 @@ public class HtmlView implements View {
         // Путь должен быть относительно корня проекта.
         // Формируем путь динамически используя this.getClass().getPackage() и разделитель "/".
         // Подсказка: путь должен начинаться с "./".
-    private final String filePath = "./4.JavaCollections/src/" + this.getClass().getPackage().getName()
+//    private final String filePath = "./4.JavaCollections/src/" + this.getClass().getPackage().getName()
+    private final String filePath = "./Aggregator_Java_Jobs/src/" + this.getClass().getPackage().getName()
             .replace('.', '/') + "/vacancies.html";
 
 
